@@ -16,6 +16,10 @@ function handleInput(value) {
   console.log(`Input value: ${value}`);
 }
 
+// debounceHandleInput = function(...args)
 const debounceHandleInput = debounce(handleInput, 2000);
 
+// debounceHandleInput("Hello") = function([Hello,])
 debounceHandleInput("Hello");
+
+// 스프레드 연산자

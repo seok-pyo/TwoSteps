@@ -8,3 +8,4 @@
 2023-07-30 : Map object and Set object / splice and slice <br>
 2023-07-31 : Filter method <br>
 2023-08-02 : Pop <br>
+2023-08-03 : Filter method Update <br>

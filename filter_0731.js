@@ -31,3 +31,50 @@ function filterByID(item) {
 
 // 배열에서 테스트를 통과하는 요소를 모아 배열로 반환한다.
 const arrByID = arr.filter(filterByID);
+
+// 활용사례
+
+TodoList.prototype.render = function () {
+  const notCompletedTodos = this.state.filter((todo) => !todo.isCompleted);
+  const completedTodos = this.state.filter((todo) => todo.isCompleted);
+
+  this.$element.innerHTML = notCompletedTodos
+    .map(
+      (todo) =>
+        `<li draggable="true" data-id="${todo._id}">${todo.content}<button>X</button></li>`
+    )
+    .join("");
+
+  this.$element_done.innerHTML = completedTodos
+    .map(
+      (todo) =>
+        `<li draggable="true" data-id="${todo._id}"><s>${todo.content}</s><button>X</button></li>`
+    )
+    .join("");
+};
+
+// 활용 사례 2 (좋아요 모아보기)
+
+// 값 초기화
+this.likeFilter = false;
+
+// 초기값으로 렌더
+this.render = () => {
+  this.$element.innerHTML = `
+  <label><input type="checkbox" ${
+    this.likeFilter ? "checked" : ""
+  }> 좋아요 모아보기 </label>
+  <ul>${this.state.users
+    .filter((user) => !this.likeFilter || this.favoriteUsers[user])
+    .map((user) => `<li data-user="${user}>${user}</li>`)
+    .join("")}</ul>`;
+};
+
+// 클릭 이벤트로 좋아요 toggle
+this.$element.addEventListener("click", (e) => {
+  if (e.target.className === "filter-favorite-user") {
+    this.likeFilter = e.target.checked;
+    this.render();
+    return;
+  }
+});

@@ -65,6 +65,7 @@ this.render = () => {
     this.likeFilter ? "checked" : ""
   }> 좋아요 모아보기 </label>
   <ul>${this.state.users
+    // !this.likefilter 부분 체크
     .filter((user) => !this.likeFilter || this.favoriteUsers[user])
     .map((user) => `<li data-user="${user}>${user}</li>`)
     .join("")}</ul>`;

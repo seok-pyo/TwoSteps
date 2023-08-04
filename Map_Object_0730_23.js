@@ -44,3 +44,28 @@ for (const [key, value] of entriesIterator) {
 myMap.forEach((value, key) => {
   console.log(key, value);
 });
+
+// Map 객체의 모습
+
+let m = new Map();
+m.set("name", "John");
+m.set("age", 30);
+m.set("city", "New York");
+
+console.log(m);
+let array = [...m];
+/*
+Map(3) {'name' => 'John', 'age' => 30, 'city' => 'New York'}
+[[Entries]]
+0 : {"name" => "John"}
+1 : {"age" => 30}
+2 : {"city" => "New York"}
+*/
+
+console.log(array);
+/*
+(3) [Array(2), Array(2), Array(2)]
+0 : (2) ['name', 'John']
+1 : (2) ['age', 30]
+2 : (2) ['city', 'New York']
+*/

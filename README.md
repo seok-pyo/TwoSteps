@@ -10,3 +10,4 @@
 2023-08-02 : Pop <br>
 2023-08-03 : Filter method Update <br>
 2023-08-04 : Map object, Or, Reduce, filter, map <br>
+2023-08-08 : 문자형, 숫자형 타입 변환 <br>

@@ -60,3 +60,14 @@ function flatten(arr) {
 
 const nested = [1, 2, 3, [4, 5, [6, 7], 8, 9]];
 console.log(flatten(nested)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// 알고리즘 코딩 테스트, 입문 -> 배열 두배 만들기
+
+const data = [
+  { name: "", age: "", country: "" },
+  { name: "", age: "", country: "" },
+  { name: "", age: "", country: "" },
+];
+
+data.map((v) => v["name"]);
+data.map((v) => v["name"], v["age"]);

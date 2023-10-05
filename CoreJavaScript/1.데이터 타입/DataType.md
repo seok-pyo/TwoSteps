@@ -1,23 +1,23 @@
 자바스크립트에는 2가지 타입이 있다. 기본형과 참조형
 
-- Primitive Type
+- Primitive Type  
   Number | String | Boolean | null | undefined | Symbol
 
-- Reference Type
+- Reference Type  
   Object
   Array | function | RegExp | set | Map
 
-- memory
+- memory  
   stack memory - 변수, 기본형 데이터, 정적 할당
   heap memory - 참조형 데이터, 동적 할당
 
-- 기본형 데이터 할당 순서
+- 기본형 데이터 할당 순서  
   변수의 선언시 -> 메모리 확보 -> 식별자(변수명) 기입
   이후 변수 할당시 -> 다른 메모리에 값을 넣고 -> 값의 [위치값]을 변수의 값에 기입한다.
 
   - 새로운 값을 할당할 경우 -> 다른 메모리에 새로 할당된 값을 넣고 -> 그 주소를 변수의 값에 새로 할당된 메모리 주소를 넣는다.(주소값이 바뀐다)
 
-- 참조형 데이터 할당 순서
+- 참조형 데이터 할당 순서  
   변수 선언시 -> 메모리 공간을 [범위]로 설정 -> 내부 [프로퍼티]의 값은 기본형 데이터 할당과 동일
   (ex) 객체의 프로퍼티 값을 바꾸어도 객체 본인의 메모리 주소 위치는 바뀌지 않는다.
 

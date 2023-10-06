@@ -17,13 +17,17 @@ function Employee(name, age, position) {
   this.position = position || "직책모름";
 }
 
-function Bridge() {}
-Bridge.prototype = Person.prototype;
-Employee.prototype = new Bridge();
-Employee.prototype.constructor = Employee;
+var extendClass = (function () {
+  function Bridge() {}
+  return function (Parent, Child) {
+    Bridge.prototype = Parent.prototype;
+    Child.prototype = new Bridge();
+    Child.prototype.constructor = Child;
+  };
+})();
+extendClass(Person, Employee);
 Employee.prototype.getPosition = function () {
-  return this.position;
+  return this.positionn;
 };
-
 var sp = new Employee("sp", 30, "CEO");
 console.dir(sp);

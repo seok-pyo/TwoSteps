@@ -27,7 +27,7 @@ var extendClass = (function () {
 })();
 extendClass(Person, Employee);
 Employee.prototype.getPosition = function () {
-  return this.positionn;
+  return this.position;
 };
 var sp = new Employee("sp", 30, "CEO");
 console.dir(sp);

@@ -34,15 +34,3 @@ console.log(newArr);
 // map의 구조
 // Array.prototype.map(callbackk, [, thisArg])
 // callback: function(currentValue, index, array);
-
-// promise의 기본 구조
-const myPromise = new Promise(function (resolve, reject) {
-  setTimeout(function () {
-    console.log("async");
-  }, 1000);
-  resolve("success");
-});
-
-myPromise.then(function (result) {
-  console.log(result);
-});
